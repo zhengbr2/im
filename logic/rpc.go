@@ -206,7 +206,7 @@ func sendHandle(arg *proto.SendArg, keyRoomId int32, msg *proto.Msg) (err error)
 		err = db.C("mids").Find(bson.M{"_id": msg.To}).One(&uids)
 		isOldPush := false
 		if err != nil || len(uids.Uids) == 0 {
-			// 未找到目标房间,目标为旧版本用户（启用后台融云发送）
+			// 未找到目标房间,推送到其他业务处理（该im与主业务分离）
 			isOldPush = true
 		}
 
