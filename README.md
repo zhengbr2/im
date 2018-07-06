@@ -1,6 +1,8 @@
 # im
 golang IM server
 
+该项目只处理IM方面，不与主业务冲突，可与使用者现有产品分离
+
 支持socket与websocket互通。
 
 数据库：mongodb，你可以换成你熟悉的。
