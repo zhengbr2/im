@@ -344,11 +344,13 @@ func sendHandle(arg *proto.SendArg, keyRoomId int32, msg *proto.Msg) (err error)
 			}
 		}
 
-	} else if arg.P.Operation == define.OP_TEXT_SMS_REPLY {
+	} else if arg.P.Operation == define.OP_TEXT_SMS_REPLY || arg.P.Operation == define.OP_TEXT_SMS_WEB_REPLY {
 
-		selector := bson.M{"_id": msg.Sid}
-		data := bson.M{"$addToSet": bson.M{"readUids": keyRoomId}}
-		err = db.C("msgs").Update(selector, data)
+		if arg.P.Operation == define.OP_TEXT_SMS_REPLY {
+			selector := bson.M{"_id": msg.Sid}
+			data := bson.M{"$addToSet": bson.M{"readUids": keyRoomId}}
+			err = db.C("msgs").Update(selector, data)
+		}
 
 		subKey := arg.Key + msg.Sid
 		tr := round.TimerWithKey(subKey)
