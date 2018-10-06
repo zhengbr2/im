@@ -13,7 +13,7 @@ func InitRPC(addrs []string) (err error) {
 		c             = &RouterRPC{}
 	)
 	rpc.Register(c)
-	for _, bind := range addrs {
+	for _, bind := range addrs { //[]string{"tcp@localhost:7270"} why cater for multiple net addresses?
 		if network, addr, err = inet.ParseNetwork(bind); err != nil {
 			return
 		}
