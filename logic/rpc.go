@@ -49,7 +49,7 @@ func (r *ReplyTimer) Remove(k uint64) {
 	delete(r.Data, k)
 }
 
-func InitRPC(addrs []string) (err error) {
+func InitLogicServ(addrs []string) (err error) {
 	var (
 		network, addr string
 		c             = &RPC{}

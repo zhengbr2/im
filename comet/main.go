@@ -35,15 +35,15 @@ func main() {
 		TCPSendBuf:       2048,
 	})
 
-	if err := InitTCP([]string{":8081"}, runtime.NumCPU()); err != nil {
+	if err := InitTCPServ([]string{":8081"}, runtime.NumCPU()); err != nil {
 		panic(err)
 	}
 
-	if err := InitWebsocket([]string{":8082"}); err != nil {
+	if err := InitWebsocketServ([]string{":8082"}); err != nil {
 		panic(err)
 	}
 
-	if err := InitRPCPuch([]string{"tcp@localhost:8092"}); err != nil {
+	if err := InitRPCPuchServ([]string{"tcp@localhost:8092"}); err != nil {
 		panic(err)
 	}
 

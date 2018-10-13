@@ -7,7 +7,7 @@ import (
 	"net/rpc"
 )
 
-func InitRPC(addrs []string) (err error) {
+func InitRouterServ(addrs []string) (err error) {
 	var (
 		network, addr string
 		c             = &RouterRPC{}

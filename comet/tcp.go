@@ -9,7 +9,7 @@ import (
 	"time"
 )
 
-func InitTCP(addrs []string, accept int) (err error) {
+func InitTCPServ(addrs []string, accept int) (err error) {
 	var (
 		bind     string
 		listener *net.TCPListener

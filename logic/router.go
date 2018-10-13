@@ -22,7 +22,7 @@ const (
 	routerServiceGetRoom = "RouterRPC.GetRoom"
 )
 
-func InitRouterRpc(addrs []string) (err error) {
+func InitRouterClient(addrs []string) (err error) {
 	var (
 		bind          string
 		network, addr string

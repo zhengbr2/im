@@ -7,7 +7,7 @@ import (
 	"net/rpc"
 )
 
-func InitRPCPuch(addrs []string) (err error) {
+func InitRPCPuchServ(addrs []string) (err error) {
 	var (
 		bind          string
 		network, addr string

@@ -22,7 +22,7 @@ var upgrader = websocket.Upgrader{
 	},
 }
 
-func InitWebsocket(addrs []string) (err error) {
+func InitWebsocketServ(addrs []string) (err error) {
 	var (
 		bind         string
 		listener     *net.TCPListener

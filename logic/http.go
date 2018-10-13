@@ -12,7 +12,7 @@ import (
 	"github.com/globalsign/mgo/bson"
 )
 
-func InitHttp(addr string) {
+func InitHttpServ(addr string) {
 
 	//gin.DisableConsoleColor()
 	gin.SetMode(gin.ReleaseMode)

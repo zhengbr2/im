@@ -2,7 +2,7 @@ package main
 
 func main() {
 
-	if err := InitCometRpc([]string{"tcp@localhost:8092"}); err != nil {
+	if err := InitCometClient([]string{"tcp@localhost:8092"}); err != nil {
 		panic(err)
 	}
 

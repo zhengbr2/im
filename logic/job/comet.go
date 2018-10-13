@@ -17,7 +17,7 @@ const (
 	cometServicePushRoomKeyMsg = "PushRPC.PushRoomKeyMsg"
 )
 
-func InitCometRpc(addrs []string) (err error) {
+func InitCometClient(addrs []string) (err error) {
 	var (
 		bind          string
 		network, addr string
