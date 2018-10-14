@@ -11,7 +11,7 @@ var (
 
 func main() {
 
-	if err := InitLogicRpc([]string{"tcp@localhost:7170"}); err != nil {
+	if err := InitLogicClient([]string{"tcp@localhost:7170"}); err != nil {
 		panic(err)
 	}
 
@@ -28,8 +28,8 @@ func main() {
 
 	operator := new(DefaultOperator)
 	DefaultServer = NewServer(buckets, round, operator, ServerOptions{
-		CliProto:         5,
-		SvrProto:         80,
+		CliProto:         5,    // ring cap
+		SvrProto:         80,	// chan buffer
 		HandshakeTimeout: 5 * time.Second,
 		TCPRcvbuf:        256,
 		TCPSendBuf:       2048,

@@ -21,7 +21,7 @@ const (
 	logicServiceDelAll     = "RPC.DelAll"
 )
 
-func InitLogicRpc(addrs []string) (err error) {
+func InitLogicClient(addrs []string) (err error) {
 	var (
 		bind          string
 		network, addr string
